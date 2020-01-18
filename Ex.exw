@@ -1,0 +1,55 @@
+without warning
+
+include std/machine.e
+
+include EuSDL2.ew
+include flags.e
+include SDLGfx.ew
+
+atom x
+x = SDL_Init(SDL_INIT_VIDEO)
+
+constant WIDTH = 640
+constant HEIGHT = 480
+
+if x  = -1 then
+	puts(1,"Failed to init SDL!\n")
+	abort(0)
+end if
+
+atom win = SDL_CreateWindow("Gfx",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,WIDTH,HEIGHT,SDL_WINDOW_SHOWN)
+atom ren = SDL_CreateRenderer(win,-1,SDL_RENDERER_ACCELERATED)
+
+atom running = 1
+atom key = 0
+atom b,rb
+atom s
+
+while running = 1 do
+
+	SDL_PumpEvents()
+	key = SDL_GetKeyboardState(key)
+	
+	if peek(key+SDL_SCANCODE_ESCAPE) > 0 then
+		running = 0
+	end if
+	
+	SDL_SetRenderDrawColor(ren,0,0,0,0)
+	
+	b = boxRGBA(ren,10,10,100,100,255,0,0,255)
+	
+	rb = roundedBoxRGBA(ren,100,80,250,10,10,0,255,0,255)
+	
+	s = stringRGBA(ren,200,200,"Hello World!",0,0,255,255)
+
+	SDL_RenderPresent(ren)
+	
+end while
+
+free(key)
+
+SDL_DestroyWindow(win)
+SDL_DestroyRenderer(ren)
+
+SDL_Quit()
+­43.41
