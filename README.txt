@@ -1,6 +1,6 @@
 Title: EuSDLGfx2
 Author: Andy P.
-Copyright (c): 2020
+Copyright (c): 2021
 Date: 1-18-2020
 Contact: g_andy <at> live.com
 Paypal: paypal.me/IcyViking
