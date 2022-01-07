@@ -4,7 +4,7 @@
 --Icy Viking Games									--
 --Written in Euphoria 4.1.0 Beta 2					--
 --For use with EuSDL2								--
---Copyright (c) 2020								--
+--Copyright (c) 2022								--
 --Contact: g_andy <at> live.com						--
 --Paypal: paypal.me/IcyViking						--
 --Patreon: https://www.patreon.com/CrazyVikingGamer --
@@ -947,4 +947,4 @@ public function SDL_imageFilterNormalizeLinear(sequence src,sequence dst,atom le
  return c_func(xSDL_imageFilterNormalizeLinear,{str,str2,len,cmin,cmax,nmin,nmax})
 	
 end function
-­9.37
+Â­9.37
